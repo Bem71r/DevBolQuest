@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bol-blue: #0050d8;
+  --bol-yellow: #ffd200;
+}
+
+.dark {
+  --bol-blue: #0050d8;
+  --bol-yellow: #ffd200;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .bol-blue {
+    background-color: var(--bol-blue);
+  }
+  .bol-yellow {
+    background-color: var(--bol-yellow);
+  }
+  .text-bol-blue {
+    color: var(--bol-blue);
+  }
+  .text-bol-yellow {
+    color: var(--bol-yellow);
+  }
+  .border-bol-blue {
+    border-color: var(--bol-blue);
+  }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+  body {
+    user-select: none;
+  }
+}
